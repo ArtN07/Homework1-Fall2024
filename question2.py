@@ -36,8 +36,8 @@ class Question2:
 
         # Do NOT change the code below!
         return {
-           "monomial": int(monomial_result),
-            "polynomial": int(polynomial_result)
+           "monomial": monomial_result,
+            "polynomial": polynomial_result
         }
 
 
