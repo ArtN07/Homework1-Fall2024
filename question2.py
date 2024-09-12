@@ -12,9 +12,7 @@ class Question2:
         :param c:
         :return:
         """
-        # fill in your logic here
-
-        return -1
+        return (c+(2*b))/a
 
     @staticmethod
     def solvePolynomial(a, b, c):
@@ -25,14 +23,12 @@ class Question2:
         :param c:
         :return:
         """
-        # fill in your logic here
-
-        return -1
+        return ((c^2)-(2*b))/a
 
     @staticmethod
     def autograder():
-        monomial_result = "REPLACE_WITH_YOUR_RESULT_HERE"
-        polynomial_result = "REPLACE_WITH_YOUR_RESULT_HERE"
+        monomial_result = "31.264705882352942"
+        polynomial_result = "1.088235294117647"
 
         # Do NOT change the code below!
         return {
