@@ -44,26 +44,25 @@ def stringify(number):
             return num
         elif 1000 <= number < 1000000:
             thou = int(number/1000)
-            if len(str(thou)) == 3:
+            if len(str(thou)) == 3 and thou != 0:
                 if thou % 100 == 0:
-                    num = below_20[int(thou / 100)] + " hundred"
+                    num = below_20[int(thou / 100)] + " hundred " + thousands[1] + ", "
                 else:
                     num = below_20[int(thou / 100)] + " hundred and "
                     temp = thou % 100
                     if temp < 20:
-                        num += below_20[temp]
+                        num += below_20[temp] + " " + thousands[1] + ", "
                     elif temp % 10 == 0:
-                        num += tens[int(temp / 10)]
+                        num += tens[int(temp / 10)] + " " + thousands[1] + ", "
                     else:
-                        num += tens[int(temp / 10)] + " " + below_20[temp % 10]
-            elif len(str(thou)) <= 2:
+                        num += tens[int(temp / 10)] + " " + below_20[temp % 10] + " " + thousands[1] + ", "
+            elif len(str(thou)) <= 2 and thou != 0:
                 if thou < 20:
-                    num = below_20[thou]
+                    num = below_20[thou] + " " + thousands[1] + ", "
                 elif thou % 10 == 0:
-                    num = tens[int(thou / 10)]
+                    num = tens[int(thou / 10)] + " " + thousands[1] + ", "
                 else:
-                    num = tens[int(thou / 10)] + " " + below_20[thou % 10]
-            num += " " + thousands[1] + ", "
+                    num = tens[int(thou / 10)] + " " + below_20[thou % 10] + " " + thousands[1] + ", "
             hun = number%1000
             if len(str(hun)) == 3:
                 if hun % 100 == 0:
@@ -109,26 +108,25 @@ def stringify(number):
             num += " " + thousands[2] + ", "
             thoutemp = number % 1000000
             thou = int(thoutemp / 1000)
-            if len(str(thou)) == 3:
+            if len(str(thou)) == 3 and thou != 0:
                 if thou % 100 == 0:
-                    num += below_20[int(thou / 100)] + " hundred"
+                    num += below_20[int(thou / 100)] + " hundred " + thousands[1] + ", "
                 else:
                     num += below_20[int(thou / 100)] + " hundred and "
                     temp = thou % 100
                     if temp < 20:
-                        num += below_20[temp]
+                        num += below_20[temp] + " " + thousands[1] + ", "
                     elif temp % 10 == 0:
-                        num += tens[int(temp / 10)]
+                        num += tens[int(temp / 10)] + " " + thousands[1] + ", "
                     else:
-                        num += tens[int(temp / 10)] + " " + below_20[temp % 10]
-            elif len(str(thou)) <= 2:
+                        num += tens[int(temp / 10)] + " " + below_20[temp % 10] + " " + thousands[1] + ", "
+            elif len(str(thou)) <= 2 and thou != 0:
                 if thou < 20:
-                    num += below_20[thou]
+                    num += below_20[thou] + " " + thousands[1] + ", "
                 elif thou % 10 == 0:
-                    num += tens[int(thou / 10)]
+                    num += tens[int(thou / 10)] + " " + thousands[1] + ", "
                 else:
-                    num += tens[int(thou / 10)] + " " + below_20[thou % 10]
-            num += " " + thousands[1] + ", "
+                    num += tens[int(thou / 10)] + " " + below_20[thou % 10] + " " + thousands[1] + ", "
             hun = thoutemp % 1000
             if len(str(hun)) == 3:
                 if hun % 100 == 0:
