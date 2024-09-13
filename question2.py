@@ -23,7 +23,7 @@ class Question2:
         :param c:
         :return:
         """
-        return ((c^2)-(2*b))/a
+        return ((c**2)-(2*b))/a
 
     @staticmethod
     def autograder():
