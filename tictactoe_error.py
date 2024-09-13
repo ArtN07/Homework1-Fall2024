@@ -1,24 +1,26 @@
 """tictactoe game for 2 players"""
 
-for x in range (1, 9) :
+choices = []
+
+for x in range (1, 10) :
     choices.append(x)
 
-playerOneTurn == True
+playerOneTurn = True
 winner = False
 
 
 def printBoard() :
     print( '\n -----')
-    print( '|' + choices[0] + '|' + choices[1] + '|' + choices[2] + '|')
+    print( '|' + str(choices[0]) + '|' + str(choices[1]) + '|' + str(choices[2]) + '|')
     print( ' -----')
-    print( '|' + choices[3] + '|' + choices[4] + '|' + choices[5] + '|')
+    print( '|' + str(choices[3]) + '|' + str(choices[4]) + '|' + str(choices[5]) + '|')
     print( ' -----')
-    print( '|' + choices[6] + '|' + choices[7] + '|' + choices[8] + '|')
+    print( '|' + str(choices[6]) + '|' + str(choices[7]) + '|' + str(choices[8]) + '|')
     print( ' -----\n')
 
 
-while winner :
-    PrintBoard()
+while not winner:
+    printBoard()
 
     if playerOneTurn :
         print( "Player 1:")
@@ -31,29 +33,29 @@ while winner :
         print("please enter a valid field")
         continue
 
-    if choices[choice - 1] = 'X' or choices [choice] == 'O':
+    if choices[choice - 1] == 'X' or choices[choice - 1] == 'O':
         print("illegal move, please try again")
         continue
 
     if playerOneTurn :
-        choices[choice - 1] = X
+        choices[choice - 1] = 'X'
     else :
-        choices[choice - 1] = O
+        choices[choice - 1] = 'O'
 
     playerOneTurn = not playerOneTurn
 
     for x in range (0, 3) :  # Place break point at this line!
-            y = x * 3
-        if (choices[y] == choices[(y + 1)] and choices[y] == choices[(y + 2)]) :
-            winner = True
+        y = x * 3
+        if choices[y] == choices[(y + 1)] and choices[y] == choices[(y + 2)] :
             printBoard()
-        if (choices[x] == choices[(x + 3)] and choices[x] == choices[(x + 6)]) :
             winner = True
+        if choices[x] == choices[(x + 3)] and choices[x] == choices[(x + 6)] :
             printBoard()
+            winner = True
 
     if((choices[0] == choices[4] and choices[0] == choices[8]) or
        (choices[2] == choices[4] and choices[4] == choices[6])) :
-        winner = true
         printBoard()
+        winner = True
 
 print ("Player " + str(int(playerOneTurn + 1)) + " wins!\n")
