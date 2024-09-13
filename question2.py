@@ -28,7 +28,7 @@ class Question2:
     @staticmethod
     def autograder():
         monomial_result = "31.264705882352942"
-        polynomial_result = "1.088235294117647"
+        polynomial_result = "8914.382352941177"
 
         # Do NOT change the code below!
         return {
